@@ -1,47 +1,53 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Wedding Admin</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/branding.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet" type="text/css">
         <script src='js/jquery.js'></script>
     </head>
     <body>
-        <div>Wedding Admin</div>
-        <div id="firstDiv"></div>
+        <div class="main_container">
+            <div class="main_title">
+                <h1>Wedding Admin</h1>
+            </div>
+            <div class="menu">
+                <div class="menu_item">
+                    <p>Guest List</p>
+                </div>
+            </div>
+        </div>
         <script>
-            var infoArray = {
-                type: "ALL_GUEST_NAMES"
-            };
-            
-            $.ajax({
-                type: "POST",
-                data: infoArray,
-                url: "requests/guest_list.php",
-                dataType: "json",
-                success: staffSuccess,
-                error: function(){
-                    console.log("There was an error retrieving the guests.");
-                }
-            });
-            
-            function staffSuccess(json) {
-                if(json["success"]) {
-                    var guests = json["result"];
-                    document.getElementById("firstDiv").innerHTML = "";
-                    for (var i = 0; i < guests.length; i++) {
-                        var guest = guests[i];
-                        document.getElementById("firstDiv").innerHTML += guest["FIRST_NAME"] + ' ' + guest["SURNAME"] + '<br>';
-                    }
-                } else {
-                    console.log("Error with the request");
-                }
-            };
+//            var infoArray = {
+//                type: "ALL_GUEST_NAMES"
+//            };
+//            
+//            $.ajax({
+//                type: "POST",
+//                data: infoArray,
+//                url: "requests/guest_list.php",
+//                dataType: "json",
+//                success: staffSuccess,
+//                error: function(){
+//                    console.log("There was an error retrieving the guests.");
+//                }
+//            });
+//            
+//            function staffSuccess(json) {
+//                if(json["success"]) {
+//                    var guests = json["result"];
+//                    document.getElementById("firstDiv").innerHTML = "";
+//                    for (var i = 0; i < guests.length; i++) {
+//                        var guest = guests[i];
+//                        document.getElementById("firstDiv").innerHTML += guest["FIRST_NAME"] + ' ' + guest["SURNAME"] + '<br>';
+//                    }
+//                } else {
+//                    console.log("Error with the request");
+//                }
+//            };
         </script>
     </body>
 </html>

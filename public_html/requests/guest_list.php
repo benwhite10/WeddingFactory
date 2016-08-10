@@ -1,6 +1,7 @@
 <?php
 
-$include_path = '/var/WeddingFactory';
+$include_path = '/Users/benwhite/Dropbox/Wedding/Website/WeddingFactory';
+//$include_path = '/var/WeddingFactory';
 include_once $include_path . '/includes/db_functions.php';
 
 $requestType = filter_input(INPUT_POST,'type',FILTER_SANITIZE_STRING);
