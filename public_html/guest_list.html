@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wedding Admin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/branding.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet" type="text/css">
+        <script src='js/jquery.js'></script>
+    </head>
+    <body>
+        <div class="main_container">
+            <div class="main_title">
+                <h1>Guest List</h1>
+            </div>
+            <div class="display" id="display">
+            </div>
+        </div>
+        <script>
+            var infoArray = {
+                type: "ALL_GUEST_NAMES"
+            };
+            
+            $.ajax({
+                type: "POST",
+                data: infoArray,
+                url: "requests/guest_list.php",
+                dataType: "json",
+                success: staffSuccess,
+                error: function(){
+                    console.log("There was an error retrieving the guests.");
+                }
+            });
+            
+            function staffSuccess(json) {
+                if(json["success"]) {
+                    var guests = json["result"];
+                    document.getElementById("display").innerHTML = "";
+                    for (var i = 0; i < guests.length; i++) {
+                        var guest = guests[i];
+                        var fname = guest["FIRST_NAME"];
+                        var sname = guest["SURNAME"];
+                        var invite = guest["INVITE"];
+                        var str = "<div class='guest_item ";
+                        if (invite === 'EVENING') {
+                            str += "evening '>";
+                        } else {
+                            str += "day '>";
+                        }
+                        str += "<h5 class='guest_name'>" + fname + " " + sname + "</h5>";
+                        if (invite === 'EVENING') {
+                            str += "<h5 class='evening_title' ><i>Evening</i></h5>";
+                        }
+                        str += "</div>";
+                        document.getElementById("display").innerHTML += str;
+                    }
+                } else {
+                    console.log("Error with the request");
+                }
+            };
+        </script>
+    </body>
+</html>

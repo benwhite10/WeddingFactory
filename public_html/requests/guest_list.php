@@ -16,7 +16,7 @@ switch ($requestType){
 }
 
 function getAllGuestNames() {
-    $query = "SELECT FIRST_NAME, SURNAME FROM GUESTS";
+    $query = "SELECT FIRST_NAME, SURNAME, INVITE FROM GUESTS";
     try {
         $guests = db_select_exception($query);
         succeedRequest($guests);
