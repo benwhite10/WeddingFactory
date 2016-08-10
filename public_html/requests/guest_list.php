@@ -2,7 +2,6 @@
 
 $include_path = '/Users/benwhite/Dropbox/Wedding/Website/WeddingFactory';
 include_once $include_path . '/includes/db_functions.php';
-include_once $include_path . '/includes/session_functions.php';
 
 $requestType = filter_input(INPUT_POST,'type',FILTER_SANITIZE_STRING);
 
@@ -34,7 +33,6 @@ function succeedRequest($result){
 }
 
 function failRequest($message){
-    errorLog("[GUEST_LIST]:There was an error with your request: " . $message);
     $response = array(
         "success" => FALSE);
     echo json_encode($response);
