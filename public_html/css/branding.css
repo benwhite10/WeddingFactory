@@ -105,7 +105,7 @@ h1 {
     text-align: right;
 }*/
 
-#display_summary, .display_list {
+.display_summary, .display_list {
     width: 100%;
     height: auto;
     background: rgba(50, 50, 50, 0.8);
@@ -115,12 +115,27 @@ h1 {
     color: #FFF;
 }
 
-#display_summary_title, .display_list_title {
+.display_summary_title, .display_list_title {
     width: 100%;
     text-align: left;
     margin: 0;
     line-height: 30px;
     border-bottom: rgba(255, 255, 255, 0.5) 1px solid;
+}
+
+.display_summary_title_label, .display_summary_title_button {
+    display: inline-block;
+    width: calc(50% - 2px);
+}
+
+.display_summary_title_button {
+    text-align: right;
+    cursor: pointer;
+    color: #ccffcc;
+}
+
+.display_summary_title_button:hover {
+    color: #5F5;
 }
 
 .primary > .display_list_title {
@@ -131,27 +146,27 @@ h1 {
     border-bottom: rgba(255, 208, 208, 0.5) 1px solid;
 }
 
-#display_summary_title h3, .display_list_title h3 {
+.display_summary_title h3, .display_list_title h3 {
     margin: 0 10px;
     font-weight: 300;
     line-height: 30px;
 }
 
-.display_summary_row {
+.display_summary_row, .display_details_row {
     width: 100%;
     margin: 0;
     font-size: 0px;
     vertical-align: middle;
 }
 
-.display_summary_row p {
+.display_summary_row p, .display_details_row p {
     line-height: 30px;
     font-size: 16px;
     font-weight: 300;
     margin: 0;
 }
 
-.display_summary_row > .col {
+.display_summary_row > .col, .display_details_row > .col {
     display: inline-block;
     height: 30px;
     vertical-align: top;
@@ -168,6 +183,35 @@ h1 {
 
 .display_summary_row > .col_3 {
     width: 25%;
+}
+
+.display_details_row > .col_1 {
+    width: 25%;
+}
+
+.display_details_row > .col_2 {
+    width: 75%;
+    text-align: left;
+}
+
+input[type=text], select {
+    width: calc(100% - 10px);
+    height: 30px;
+    padding: 0;
+    color: #FFF;
+    background: transparent;
+    border: none;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+}
+
+select {
+    width: calc(100% - 8px);
+    margin-left: -9px;
 }
 
 .primary {

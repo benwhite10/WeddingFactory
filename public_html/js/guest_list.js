@@ -77,7 +77,8 @@ function parseGuestList(filter, primary, secondary) {
     for (var i = 0; i < guests.length; i++) {
         var guest = guests[i];
         var filterVar = guest[filter];
-        var str = "<div class='guest_item'><p>";
+        var str = "<div class='guest_item' ";
+        str += "onclick='location.href=\x22guest.html?uid=" + guest["ID"] + "\x22;'><p>";
         str += guest["FIRST_NAME"] + " " + guest["SURNAME"];
         str += "</p></div>";;
         if (filterVar === primary) {

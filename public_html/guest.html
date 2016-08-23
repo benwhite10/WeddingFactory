@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wedding Admin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/branding.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet" type="text/css">
+        <script src='js/jquery.js'></script>
+        <script src='js/guest.js'></script>
+    </head>
+    <body>
+        <div class="main_container">
+            <div class="main_title" id="main_name">
+                <h1>Name</h1>
+            </div>
+            <div class="display" id="display">
+                <div class="display_summary">
+                    <div class="display_summary_title">
+                        <div class="display_summary_title_label">
+                            <h3>Details</h3>
+                        </div>
+                        <div class="display_summary_title_button" id="save_details" onclick="saveDetails()">
+                            <h3>Save</h3>
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>First Name</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="FIRST_NAME" value="" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Surname</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="SURNAME" value="" placeholder="Surname">
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Invite</p>
+                        </div>
+                        <div class="col col_2">
+                            <select id="select_invite" name="INVITE">
+                                <option value="DAY">Day</option>
+                                <option value="EVENING">Evening</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Email</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="EMAIL" value="" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Age</p>
+                        </div>
+                        <div class="col col_2">
+                            <select id="select_age" name="AGE">
+                                <option value="ADULT">Adult</option>
+                                <option value="18">18</option>
+                                <option value="17">17</option>
+                                <option value="16">16</option>
+                                <option value="15">15</option>
+                                <option value="14">14</option>
+                                <option value="13">13</option>
+                                <option value="12">12</option>
+                                <option value="11">11</option>
+                                <option value="10">10</option>
+                                <option value="9">9</option>
+                                <option value="8">8</option>
+                                <option value="7">7</option>
+                                <option value="6">6</option>
+                                <option value="5">5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                                <option value="0">0</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Phone</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="NUMBER" value="" placeholder="Phone Number">
+                        </div>
+                    </div>
+                </div>
+                <div class="display_summary">
+                    <div class="display_summary_title">
+                        <div class="display_summary_title_label">
+                            <h3>Address</h3>
+                        </div>
+                        <div class="display_summary_title_button" id="save_address" onclick="saveAddress()">
+                            <h3>Save</h3>
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Line 1</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="ADDRESS_LINE_1" value="" placeholder="Address Line 1">
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Line 2</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="ADDRESS_LINE_2" value="" placeholder="Address Line 2">
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Line 3</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="ADDRESS_LINE_3" value="" placeholder="Address Line 3">
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Town</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="TOWN" value="" placeholder="Town">
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>County</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="COUNTY" value="" placeholder="County">
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Postcode</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="POSTCODE" value="" placeholder="Postcode">
+                        </div>
+                    </div>
+                    <div class="display_details_row">
+                        <div class="col col_1">
+                            <p>Country</p>
+                        </div>
+                        <div class="col col_2">
+                            <input type="text" name="COUNTRY" value="" placeholder="Country">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
