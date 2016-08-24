@@ -78,9 +78,18 @@ function parseGuestList(filter, primary, secondary) {
         var guest = guests[i];
         var filterVar = guest[filter];
         var str = "<div class='guest_item' ";
-        str += "onclick='location.href=\x22guest.html?uid=" + guest["ID"] + "\x22;'><p>";
+        str += "onclick='location.href=\x22guest.html?uid=" + guest["ID"] + "\x22;'>"
+        str += "<div class='guest_item_text'><p>";
         str += guest["FIRST_NAME"] + " " + guest["SURNAME"];
-        str += "</p></div>";;
+        str += "</p></div><div class='guest_item_icons'><div class='address_icon ";
+        if (guest["ADDRESS_ID"] === "0") {
+            str += "missing_info";
+        }
+        str += "'></div><div class='email_icon ";
+        if (guest["EMAIL"] === "") {
+            str += "missing_info";
+        }
+        str += "'></div></div></div>";;
         if (filterVar === primary) {
             primaryStr += str;
         } else if (filterVar === secondary) {

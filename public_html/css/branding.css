@@ -222,11 +222,49 @@ select {
     color: #ffcccc;
 }
 
-.guest_item {
+.guest_item, .guest_item_text {
     width: 100%;
     height: 30px;
     text-align: left;
+    padding: 0;
     margin: 0;
+    vertical-align: top;
+}
+
+.guest_item_text {
+    width: calc(100% - 80px);
+    display: inline-block;
+}
+
+.guest_item_icons {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+}
+
+.address_icon, .email_icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.address_icon {
+    background-image: url("/images/address_icon.png");
+    background-size: 60px 30px;
+}
+
+.email_icon {
+    background-image: url("/images/email_icon.png");
+    background-size: 60px 30px;
+}
+
+.missing_info {
+    background-position-x: -30px;
+}
+
+.email_icon {
+    background-image: url("/images/email_icon.png");
 }
 
 .guest_item:hover {
