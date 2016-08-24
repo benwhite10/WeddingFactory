@@ -21,7 +21,7 @@
                         <div class="display_summary_title_label">
                             <h3>Details</h3>
                         </div>
-                        <div class="display_summary_title_button" id="save_details" onclick="saveDetails()">
+                        <div class="display_summary_title_button save" id="save_details" onclick="saveDetails()">
                             <h3>Save</h3>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                             <p>First Name</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="FIRST_NAME" value="" placeholder="First Name">
+                            <input type="text" name="FIRST_NAME" value="" placeholder="First Name" oninput="updateButton('save_details', 'SAVE')">
                         </div>
                     </div>
                     <div class="display_details_row">
@@ -38,7 +38,7 @@
                             <p>Surname</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="SURNAME" value="" placeholder="Surname">
+                            <input type="text" name="SURNAME" value="" placeholder="Surname" oninput="updateButton('save_details', 'SAVE')">
                         </div>
                     </div>
                     <div class="display_details_row">
@@ -46,7 +46,7 @@
                             <p>Invite</p>
                         </div>
                         <div class="col col_2">
-                            <select id="select_invite" name="INVITE">
+                            <select id="select_invite" name="INVITE" oninput="updateButton('save_details', 'SAVE')">
                                 <option value="DAY">Day</option>
                                 <option value="EVENING">Evening</option>
                             </select>
@@ -57,7 +57,7 @@
                             <p>Email</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="EMAIL" value="" placeholder="Email Address">
+                            <input type="text" name="EMAIL" value="" placeholder="Email Address" oninput="updateButton('save_details', 'SAVE')">
                         </div>
                     </div>
                     <div class="display_details_row">
@@ -65,7 +65,7 @@
                             <p>Age</p>
                         </div>
                         <div class="col col_2">
-                            <select id="select_age" name="AGE">
+                            <select id="select_age" name="AGE" oninput="updateButton('save_details', 'SAVE')">
                                 <option value="ADULT">Adult</option>
                                 <option value="18">18</option>
                                 <option value="17">17</option>
@@ -94,7 +94,7 @@
                             <p>Phone</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="NUMBER" value="" placeholder="Phone Number">
+                            <input type="text" name="NUMBER" value="" placeholder="Phone Number" oninput="updateButton('save_details', 'SAVE')">
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                             <p>Line 1</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="ADDRESS_LINE_1" value="" placeholder="Address Line 1">
+                            <input type="text" name="ADDRESS_LINE_1" value="" placeholder="Address Line 1" oninput="updateButton('save_address', 'SAVE')">
                         </div>
                     </div>
                     <div class="display_details_row">
@@ -120,7 +120,7 @@
                             <p>Line 2</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="ADDRESS_LINE_2" value="" placeholder="Address Line 2">
+                            <input type="text" name="ADDRESS_LINE_2" value="" placeholder="Address Line 2" oninput="updateButton('save_address', 'SAVE')">
                         </div>
                     </div>
                     <div class="display_details_row">
@@ -128,7 +128,7 @@
                             <p>Line 3</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="ADDRESS_LINE_3" value="" placeholder="Address Line 3">
+                            <input type="text" name="ADDRESS_LINE_3" value="" placeholder="Address Line 3" oninput="updateButton('save_address', 'SAVE')">
                         </div>
                     </div>
                     <div class="display_details_row">
@@ -136,7 +136,7 @@
                             <p>Town</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="TOWN" value="" placeholder="Town">
+                            <input type="text" name="TOWN" value="" placeholder="Town" oninput="updateButton('save_address', 'SAVE')">
                         </div>
                     </div>
                     <div class="display_details_row">
@@ -144,7 +144,7 @@
                             <p>County</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="COUNTY" value="" placeholder="County">
+                            <input type="text" name="COUNTY" value="" placeholder="County" oninput="updateButton('save_address', 'SAVE')">
                         </div>
                     </div>
                     <div class="display_details_row">
@@ -152,7 +152,7 @@
                             <p>Postcode</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="POSTCODE" value="" placeholder="Postcode">
+                            <input type="text" name="POSTCODE" value="" placeholder="Postcode" oninput="updateButton('save_address', 'SAVE')">
                         </div>
                     </div>
                     <div class="display_details_row">
@@ -160,7 +160,7 @@
                             <p>Country</p>
                         </div>
                         <div class="col col_2">
-                            <input type="text" name="COUNTRY" value="" placeholder="Country">
+                            <input type="text" name="COUNTRY" value="" placeholder="Country" oninput="updateButton('save_address', 'SAVE')">
                         </div>
                     </div>
                 </div>

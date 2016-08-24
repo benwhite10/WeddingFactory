@@ -239,3 +239,27 @@ select {
     line-height: 30px;
     font-weight: 300;
 }
+
+.save {
+    color: #ccffcc;
+}
+
+.save:hover {
+    color: #5F5;
+}
+
+.saved, .saved:hover {
+    color: #5F5
+}
+
+.saving, .saving:hover {
+    color: #999;
+}
+
+.error {
+    color: #ffcccc;
+}
+
+.error:hover {
+    color: #F55;
+}

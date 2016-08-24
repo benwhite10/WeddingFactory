@@ -47,7 +47,7 @@ function parseDetails() {
 
 function saveDetails() {
     var userid = getQueryStringValue('uid');
-    updateDetailsButton("SAVING");
+    updateButton("save_details", "SAVING");
     
     var infoArray = {
         type: "UPDATE_DETAILS",
@@ -67,37 +67,25 @@ function saveDetails() {
         dataType: "json",
         success: function(json) {
             if (json["success"]) {
-                updateDetailsButton("SAVED");
+                updateButton("save_details", "SAVED");
                 getGuestInformation();
             } else {
-                updateDetailsButton("ERROR");
+                updateButton("save_details", "ERROR");
                 console.log(json["message"]);
             }
         },
         error: function(){
-            updateDetailsButton("ERROR");
+            updateButton("save_details", "ERROR");
             console.log("There was an error in the save details request");
         }
     });
-}
-
-function updateDetailsButton(state) {
-    if (state === "SAVING") {
-        $("#save_details").html("<h3>Saving..</h3>");
-    } else if (state === "SAVED") {
-        $("#save_details").html("<h3>Saved</h3>");
-    } else if (state === "SAVE") {
-        $("#save_details").html("<h3>Save</h3>");
-    } else {
-        $("#save_details").html("<h3>Error - Try Again</h3>");
-    }
 }
 
 function saveAddress() {
     var guestInfo = JSON.parse(sessionStorage.getItem("guest_info"));
     var user_id = guestInfo["ID"];
     var address_id = guestInfo["ADDRESS_ID"];
-    updateAddressButton("SAVING");
+    updateButton("save_address", "SAVING");
     
     var infoArray = {
         address1: $("[name='ADDRESS_LINE_1']").val(),
@@ -124,28 +112,46 @@ function saveAddress() {
         dataType: "json",
         success: function(json) {
             if (json["success"]) {
-                updateAddressButton("SAVED");
+                updateButton("save_address", "SAVED");
             } else {
-                updateAddressButton("ERROR");
+                updateButton("save_address", "ERROR");
                 console.log(json["message"]);
             }
         },
         error: function(){
-            updateAddressButton("ERROR");
+            updateButton("save_address", "ERROR");
             console.log("There was an error in the save details request");
         }
     });
 }
 
-function updateAddressButton(state) {
+function updateButton(id, state) {
+    var saveText = id === "save_address" ? "saveAddress()" : "saveDetails()";
+    id = "#" + id;
+    $(id).removeClass("saving");
+    $(id).removeClass("save");
+    $(id).removeClass("saved");
+    $(id).removeClass("error");
     if (state === "SAVING") {
-        $("#save_address").html("<h3>Saving..</h3>");
+        $(id).html("<h3>Saving..</h3>");
+        $(id).addClass("saving");
+        $(id).attr("onclick","");
+        $(id).css("cursor", "default");
     } else if (state === "SAVED") {
-        $("#save_address").html("<h3>Saved</h3>");
+        $(id).html("<h3>Saved &#10003</h3>");
+        $(id).addClass("saved");
+        $(id).attr("onclick","");
+        $(id).css("cursor", "default");
     } else if (state === "SAVE") {
-        $("#save_address").html("<h3>Save</h3>");
+        $(id).html("<h3>Save</h3>");
+        $(id).addClass("save");
+        $(id).attr("onclick",saveText);
+        $(id).css("cursor", "pointer");
     } else {
-        $("#save_address").html("<h3>Error - Try Again</h3>");
+        $(id).html("<h3>Error - Try Again</h3>");
+        $(id).addClass("error");
+        $(id).attr("onclick",saveText);
+        $(id).css("cursor", "pointer");
     }
 }
 
